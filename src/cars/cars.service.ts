@@ -85,4 +85,14 @@ export class CarsService {
 
     return carDb;
   }
+
+  delete(id: string) {
+    this.findOneById(id);
+
+    // remove car
+    // const lastIndex = this.cars.lastIndexOf(carDb);
+    // this.cars.splice(lastIndex, 1);
+
+    this.cars = this.cars.filter((car) => car.id !== id);
+  }
 }
